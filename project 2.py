@@ -3,16 +3,23 @@ import random
 #loop
              
 while True:
-    choice=input("Roll the dice ? y/n ")
+    choice=input("Roll the dice ? y/n ").lower()
        
 #displaying the numbers
     if choice=="y":
-        rolls=int(input("How many times do you want to roll? "))
-        
-        while rolls <= 0:
-            print("please enter a positive number")
-            rolls=int(input("How many times do you want to roll? "))
-            
+       
+    
+        while True:
+            try:
+                 rolls=int(input("How many times do you want to roll? "))
+
+                 if 1 <= rolls <= 10:
+                    break
+                 else:
+                    print("ENTER A NUMBER BETWEEN 1 AND 10")
+            except ValueError:
+                print("Invalid input,enter a whole number")
+
 
         counter=0
 
