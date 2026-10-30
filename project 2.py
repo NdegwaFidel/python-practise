@@ -22,6 +22,7 @@ while True:
 
 
         counter=0
+        total_score=0
 
         while counter < rolls:
 
@@ -30,9 +31,12 @@ while True:
 
             print("You rolled ",die_1 , " and ",die_2 )
 
+            total_score = total_score + die_1 + die_2
             counter=counter+1
         
         print("GAME OVER! YOU COMPLETED ",counter,"ROLLS")
+        print("YOUR TOTAL SCORE IS ",total_score)
+
 
     elif choice=="n":
         print("Thanks for playing!")
