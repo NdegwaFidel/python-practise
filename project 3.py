@@ -5,12 +5,15 @@ while True:
         num_1=float(input("first number "))
         num_2=float(input("second number "))
 
-        choice =( "1. add "
-          "2. subtract "
-          "3. multiply "
-          "4. divide ") 
+        choices =["add","subtract","multiply","divide"]
 
-        print (choice)
+        for index, choice in enumerate(choices,start=1):
+            print(index,choice)
+
+
+ 
+
+        
 
         operation=int(input("choose operation to use by selecting the number "))
     except ValueError:
