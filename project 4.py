@@ -38,6 +38,23 @@ print("Class Average: ",f"{class_average:.2f}")
 
 highest=max(averages)
 lowest=min(averages)
+new_averages=sorted(averages,reverse=True)
+
+formatted_avrg=[f"{average:.2f}" for average in averages]
+formatted_sorted=[f"{average:.2f}"for average in new_averages]
+passing_students=[new for new in formatted_sorted if float(new) >= 50]
+failing_students=[new for new in formatted_sorted if float(new)< 50]
+
+
+
+print("STUDENT AVERAGE; ",end="")
+print(formatted_avrg)
+print("STUDENT AVERAGE HIGHEST TO LOWEST:  ",end="")
+print(formatted_sorted)
+print("HIGHEST AVERAGE: ",f"{highest:.2f}")
+print("LOWEST AVERAGE: ",f"{lowest:.2f}")
+print(passing_students)
+print(failing_students)
 
 
 
