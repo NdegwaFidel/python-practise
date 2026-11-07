@@ -14,7 +14,7 @@ for student in students:
 print(age)
 
 for name,age,course in students:
-    print(name)                   
+    print(name)                  
 
 
 
