@@ -1,53 +1,46 @@
-students = {
-    "SCT001": {
-        "name": "Fidel",
-        "maprks": 76,
-        "course": "Computer Science"
-    },
+students={}
 
-    "SCT002": {
-        "name": "Mary",
-        "marks": 89,
-        "course": "Applied Physics"
+name=input('ENTER STUDENT NAME ')
+reg_no=input('ENTER REGISTRATON NUMBER ').strip().upper()
+marks=float(input('ENTER STUDENT MARKS '))
+course=input('ENTER STUDENT COURSE ')
+
+
+def add_student(reg_no,name,marks,course):
+    if reg_no in students:
+        print('STUDENT ALREADY EXISTS!')
+    else:
+        students[reg_no]={
+        'name':name,
+        'course':course,
+        'marks':marks
     }
-}
-students["SCT001"]["marks"]=90
-students["SCT003"]={
-    'name':'James',
-    'marks':68,
-    'course':'computer science'
+    print()
+    print('NEW STUDENT ADDED SUCCESFULLY')
+print()
+add_student(reg_no,name,marks,course)
+print(students)
 
-}
-for student,details in students.items():
-    print(student)
-    
-    print(student)
-    print('NAME; ',details['name'])
-    print('SCORE; ',details['marks'])
-    if details['marks']>=50:
-        print('PASS')
-    else:
-        print('FAIL')
 
-    print('SCORE; ',details['marks'])
-    if details['marks']>=50:
-        print('PASS')
+def display_students():
+    if students=={}:
+        print('NO STUDENT RECORDS FOUND ')
     else:
-        print('FAIL')
+        for student,details in students.items():
+            print('REG NO: ',student)
+            print('NAME; ',details['name'])
+            print('COURSE: ',details['course'])
+            print('MARKS: 'details['marks'])
+
+
+display_students()
 
 
 def search_student(reg_no):
-   
-    if reg_no in students:
-        details=students[reg_no]
+    registration_no=input('ENTER REGISTRATION NUMBER TO ACCESS STUDENT DETAILS: ')
 
-        print('NAME; ',details['name'])
-        print('SCORE; ',details['marks'])
-        print('COURSE; ',details['course'])
+    if registration_no in students:
+        print('STUDENT FOUND')
+        print(student,details in students.items())
     else:
-        print('ADMISSION NUMBER NOT FOUND')
-
-search=input("ENTER STUDENT REGISTRATION NUMBER: ")
-
-search_student(search)
-
+        print('STUDENT NOT FOUND!')
